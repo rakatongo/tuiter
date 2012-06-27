@@ -1,14 +1,31 @@
 <header class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<%= link_to "Tuiter", '#', id: "logo"%>
-			<nav>
-				<ul class="nav pull-right">
-					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Help", help_path %></li>
-					<li><%= link_to "Registro", signup_path %></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Tuiter", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Help", help_path %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Users", '#' %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Cuenta <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Perfil", current_user %></li>
+                <li><%= link_to "Configuracion", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Salir", signout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Logueate", signin_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>

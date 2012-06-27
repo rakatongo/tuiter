@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   	def create
   		@user = User.new(params[:user])
   			if @user.save
+          sign_in @user
           flash[:succes] = "Bienvenido al mini-TUITER!"  				
           redirect_to @user
   			else 
   				render 'new'
-  			end
-  	
+  			end  	
   	end
 end

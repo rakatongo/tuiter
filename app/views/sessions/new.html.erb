@@ -1,0 +1,19 @@
+<% provide(:title, "Logueate") %>
+
+<h1>Logueate</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(:session, url: session_path) do |f| %>
+
+		<%= f.label :email %>
+		<%= f.text_field :email %>	
+
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+
+		<%= f.submit "Entrar", class: "btn btn-large btn-primary" %>
+		<%end%>
+		<p>Nuevo user? <%= link_to "Registrate ahora!", signup_path %></p>
+	</div>
+</div>
