@@ -68,7 +68,7 @@ p{
 	padding-top: 9px;
 	font-weight: bold;
 	line-height: 1;
-		&:hoover{
+		&:hover{
 		color: white;
 		text-decoration: none;
 	}	
@@ -86,7 +86,7 @@ footer{
 	color: $grayLight;
 	a{
 		color: $gray;
-		&:hoover{
+		&:hover{
 			color: $grayDarker;
 		}
 	}
@@ -203,5 +203,35 @@ aside{
 	textarea{
 		height: 100px;
 		margin-bottom: 5px;
+	}
+}
+
+/* Sidebar */
+
+.stats{
+	overflow: auto;
+	a{
+		float: left;
+		padding: 0 10px;
+		border-left: 1px solid $grayLighter;
+		color: gray;
+		&:first-child{
+			padding-left: 0;
+			border: 0;
+		}
+		&:hover{
+			text-decoration: none;
+			color: $blue;
+		}
+	}
+	strong{
+		display: block;
+	}
+}
+.user_avatars{
+	overflow: auto;
+	margin-top: 10px;
+	.gravatar{
+		margin: 1px 1px;
 	}
 }
