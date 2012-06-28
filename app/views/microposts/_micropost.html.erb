@@ -1,0 +1,11 @@
+<li>
+<span class="content"><%= micropost.content %></span>
+<span class="timestamp">
+Posteado <%= time_ago_in_words(micropost.created_at) %> atras.
+</span>
+<% if current_user?(micropost.user) %>
+	<%= link_to "Borrar", micropost, method: :delete,
+	data: { confirm: "Esta seguro?."},
+		title: micropost.content %>
+	<%end%>
+</li>
